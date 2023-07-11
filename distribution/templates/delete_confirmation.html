@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Confirmation</title>
+    <style>
+        /* CSS styles for the confirmation container */
+        .confirmation-container {
+            margin: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* CSS styles for the confirmation heading */
+        .confirmation-heading {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        /* CSS styles for the radio button options */
+        .radio-option {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <h1 class="confirmation-heading">Delete Confirmation</h1>
+        
+        <p>Do you want to delete the student list or the subject list?</p>
+        
+        <form method="post" action="">
+            {% csrf_token %}
+            <div class="radio-option">
+                <input type="radio" name="delete_list" value="students" id="delete-students" required>
+                <label for="delete-students">Delete Student List</label>
+            </div>
+            
+            <div class="radio-option">
+                <input type="radio" name="delete_list" value="subjects" id="delete-subjects" required>
+                <label for="delete-subjects">Delete Subject List</label>
+            </div>
+            
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+</body>
+</html>

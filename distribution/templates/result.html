@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Result</title>
+   <style>
+      body {
+         background-color: black;
+         display: grid;
+         justify-content: center;
+         align-items: center;
+         height: 85vh;
+         margin: 0;
+      }
+
+      .container {
+         background-color: #fff;
+         border-radius: 5px;
+         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+         padding: 20px;
+         width: 400px;
+         margin-top: 15%;
+      }
+
+      h3 {
+         color: rgb(192, 121, 7);
+      }
+
+      h1 {
+         text-align: center;
+         margin-bottom: 20px;
+         color: #7a7977;
+      }
+
+      p {
+         color: #110f0f;
+         margin-bottom: 10px;
+      }
+
+      .edit-button,
+      .delete-button {
+         display: inline-block;
+         padding: 5px 10px;
+         background-color: #4CAF50;
+         border: none;
+         color: #fff;
+         border-radius: 5px;
+         cursor: pointer;
+         margin-left: 10px;
+      }
+
+      .delete-button {
+         background-color: #f44336;
+      }
+   </style>
+</head>
+<body>
+   <div class="container">
+      <h1>List</h1>
+      <hr>
+      <h3>Students:</h3>
+      <p >[{{ students }}]</p>
+
+      <h3>Subjects:</h3>
+      <p>[{{ subjects }}]</p>
+      
+      <a class="edit-button" href="{% url 'edit-result' distribution_id %}">Edit</a>
+      <a class="delete-button" href="{% url 'delete-result' distribution_id %}">Delete</a>
+
+   </div>
+   <hr>
+   <div class="container">
+      <h1>Result</h1>
+      <hr>
+      {% for key, value in result.items %}
+      <p>{{ key }} : {{ value }}</p>
+      {% endfor %}
+   </div>
+
+</body>
+</html>

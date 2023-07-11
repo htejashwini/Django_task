@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Result</title>
+    <style>
+        /* CSS styles for the result container */
+        .result-container {
+            margin: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* CSS styles for the result heading */
+        .result-heading {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        /* CSS styles for the list */
+        .result-list {
+            margin-bottom: 10px;
+        }
+
+        /* CSS styles for the list items */
+        .result-item {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="result-container">
+        <h1 class="result-heading">Delete Result</h1>
+        
+        <div class="result-list">
+            {% if result.students %}
+                <h2>Deleted Students:</h2>
+                <ul>
+                    {% for student in result.students %}
+                        <li class="result-item">{{ student }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+            {% if result.subjects %}
+                <h2>Deleted Subjects:</h2>
+                <ul>
+                    {% for subject in result.subjects %}
+                        <li class="result-item">{{ subject }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        
+        <p>Result successfully deleted.</p>
+    </div>
+</body>
+</html>
