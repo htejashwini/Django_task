@@ -3,26 +3,6 @@ from django.shortcuts import get_object_or_404, render, redirect
 from .forms import SubjectStudentForm
 from .models import Distribution
 
-# def distribute(items, groups):
-#     random.shuffle(items)
-#     num_items = len(items)
-#     num_groups = len(groups)
-#     group_size = num_items // num_groups
-#     remaining_items = num_items % num_groups
-
-#     result = {}
-#     start_index = 0
-#     for i, group in enumerate(groups):
-#         group_size_with_extra_item = group_size + 1 if i < remaining_items else group_size
-#         end_index = start_index + group_size_with_extra_item
-#         result[group] = items[start_index:end_index]
-#         start_index = end_index
-
-#     remaining_items_list = items[-remaining_items:]
-#     for group in result:
-#         result[group].extend(remaining_items_list)
-#    return result
-
 def distribute(items, groups):
     random.shuffle(items)
     num_items = len(items)
